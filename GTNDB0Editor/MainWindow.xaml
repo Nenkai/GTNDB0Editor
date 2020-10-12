@@ -1,0 +1,77 @@
+﻿<Window x:Class="GTNDB0Editor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GTNDB0Editor"
+        mc:Ignorable="d"
+        Title="Gran Turismo Car Name Database Editor" Height="700" Width="860">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" Height="24" >
+            <MenuItem Header="_File" Height="24">
+                <MenuItem Header="_Open Database File" Click="OpenLib_Click" />
+                <MenuItem Name="menuItem_Save" Header="_Save Database File" IsEnabled="False" Click="SaveLib_Click"/>
+                <Separator />
+                <MenuItem Name="menuItem_Dump" Header="_Dump File" IsEnabled="False" Click="Dump_Click"/>
+                <Separator />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+            <MenuItem Header="_About" Height="24" Click="MenuItem_Click">
+            </MenuItem>
+        </Menu>
+        <TabControl Name="tbControl" DockPanel.Dock="Bottom">
+            <TabItem Header="Long Car Names">
+                <Grid Background="#FFE5E5E5">
+                    <ListView Name="lvCarNames">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="RowID" DisplayMemberBinding="{Binding SpecDBID}" Width="60"/>
+                                <GridViewColumn Header="OrderID" DisplayMemberBinding="{Binding AlphabeticalID}" Width="60"/>
+                                <GridViewColumn Header="Car Name" DisplayMemberBinding="{Binding FullName}" Width="600"/>
+                            </GridView>
+                        </ListView.View>
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Add New" Click="lvContextTrack_AddNew"/>
+                                <MenuItem Header="Edit" Click="lvContextLongName_Edit"/>
+                                <MenuItem Header="Remove" Click="lvContextLongName_Remove"/>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Short Car Names">
+                <Grid Background="#FFE5E5E5">
+                    <ListView Name="lvShortCarNames">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="RowID" DisplayMemberBinding="{Binding SpecDBID}" Width="60"/>
+                                <GridViewColumn Header="OrderID" DisplayMemberBinding="{Binding AlphabeticalID}" Width="60"/>
+                                <GridViewColumn Header="Car Name" DisplayMemberBinding="{Binding FullName}" Width="600"/>
+                            </GridView>
+                        </ListView.View>
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Add New" Click="lvContextTrack_AddNew"/>
+                                <MenuItem Header="Edit" Click="lvContextShortName_Edit"/>
+                                <MenuItem Header="Remove" Click="lvContextShortName_Remove"/>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Prefixes">
+                <Grid Background="#FFE5E5E5">
+                    <ListView Name="lvPrefixes">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Index" DisplayMemberBinding="{Binding Index}" Width="60"/>
+                                <GridViewColumn Header="Prefix" DisplayMemberBinding="{Binding Name}" Width="600"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>

@@ -1,0 +1,19 @@
+﻿<Window x:Class="GTNDB0Editor.NDB0EntryEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GTNDB0Editor"
+        mc:Ignorable="d"
+        Title="Car Name Edit/Add" Height="166" Width="500">
+    <Grid>
+        <Label Content="SpecDB ID" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="74"/>
+        <Label Content="Long Name" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="74"/>
+        <Label Content="Short Name" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="74"/>
+        <Button Content="Save" Margin="407,105,10,6" Click="ButtonSave_Click"/>
+        <TextBox Height="23" Name="tb_SpecID" Margin="89,14,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox Height="23" Name="tb_LongName" Margin="89,45,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox Height="23" Name="tb_ShortName" Margin="89,75,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
