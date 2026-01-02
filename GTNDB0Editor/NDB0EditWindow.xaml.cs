@@ -1,4 +1,9 @@
-﻿using System;
+// using the Design Patterns book (Elements of Reusable, Object-Oriented Software)
+// by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissibes, foreword by Grady Booch
+// We try to optimise this code C, in a more suttable Class-Oriented Object optimisation
+// Trying to define a clear pattern here and more clarity
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,11 +24,13 @@ namespace GTNDB0Editor
     /// <summary>
     /// Interaction logic for BGMLTrackEditWindow.xaml
     /// </summary>
+    
     public partial class NDB0EntryEditWindow : Window
     {
         private NDB0Entry _entryLong;
         private NDB0Entry _entryShort;
         public bool Saved { get; set; }
+        
         public NDB0EntryEditWindow(NDB0Entry entryLong, NDB0Entry entryShort)
         {
             _entryLong = entryLong;
@@ -37,6 +44,7 @@ namespace GTNDB0Editor
         }
 
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
+        
         {
             if (!uint.TryParse(tb_SpecID.Text, out uint specID))
             {
